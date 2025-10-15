@@ -1,5 +1,25 @@
+:root {
+    --color-base: white;
+    --color-text: #444;
+    --color-panel: lightcyan;
+    --color-border: black;
+    --color-contrast: blue;
+    --shadow-inset: 0 0 20px var(--color-border) inset;
+    --shadow: 0 0 20px var(--color-border);
+}
+
+.theme-black{
+    --color-base: black;
+    --color-text: white;
+    --color-border: #ddd;
+}
+
+
 * {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: var(--color-base);
+    border-color: var(--color-border);
+    color: var(--color-text);
 }
 
 html, body {
@@ -9,26 +29,27 @@ html, body {
 
 header, nav, aside, footer {
     padding: 10px;
+    background-color: var(--color-panel);
 }
 
 header { 
-    background-color: rgb(188, 149, 255);
+    /*background-color: rgb(188, 149, 255);*/
     /*background: linear-gradient( magenta 5%, rgb(188, 149, 255) 25%, rgb(188, 149, 255) 75% , darkmagenta 95%);*/
-    box-shadow: 0 0 20px black inset;
+    box-shadow: var(--shadow-inset);
     margin-bottom: 10px;
     position: sticky;
     top: 0px;
     z-index: 9999;
 }
 nav { 
-    background-color: hsl(60, 100%, 90%);
+    /*background-color: hsl(60, 100%, 90%);*/
     position: sticky;
     top:38px;
     z-index: 9990;
 }
-aside { background-color: rgb(170, 254, 170) }
+
 footer { 
-    background-color:rgb(255, 186, 186);
+    /*background-color:rgb(255, 186, 186);*/
     height: 1000px;
 }
 
@@ -70,7 +91,7 @@ section.first {
 }
 
 [colspan="2"] {
-    background-color: aqua;
+    background-color: aqua ;
 }
 
 img.icon {
@@ -87,6 +108,7 @@ img.pic {
 section {
     text-align: justify;
     padding: 10px;
+    --color-base: transparent; 
 }
 
 @counter-style winners-list {
@@ -114,6 +136,28 @@ nav ul li {
     top:400px; 
     background-color: white;
     transform: translateX(50px) rotate(45deg) scale(.5);
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav li a {
+    background: linear-gradient(#eee 1px, lightgray 5px, lightgray 50%, #eee 55%, #aaa 95%);
+    user-select: none;
+}
+
+nav li a:hover {
+    box-shadow: var(--shadow);
+}
+
+nav li a:active {
+    box-shadow: var(--shadow-inset);
+}
+
+nav li a:focus {
+    background: linear-gradient(#aaa 1px, #eee 5px, #eee 50%, lightgray 55%, #eee 95%);
 }
 
 nav a {
