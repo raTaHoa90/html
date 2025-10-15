@@ -59,7 +59,7 @@ section.top.first {
 section.first {
     border: dashed 5px gray;
     min-height: 250px;
-    background-image: url(/img/icon2.png), url(/img/background.png) ;
+    background-image: url(/html/img/icon2.png), url(/html/img/background.png) ;
     background-repeat: no-repeat, repeat;
     background-position: right 150px, 5px;
     background-size: 100px, 40px 40px;
