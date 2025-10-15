@@ -1,0 +1,90 @@
+* {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+html, body {
+    margin:0;
+    padding: 0;
+}
+
+header, nav, aside, footer {
+    padding: 10px;
+}
+
+header { 
+    background-color: rgb(188, 149, 255);
+    /*background: linear-gradient( magenta 5%, rgb(188, 149, 255) 25%, rgb(188, 149, 255) 75% , darkmagenta 95%);*/
+    box-shadow: 0 0 20px black inset;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0px;
+    z-index: 9999;
+}
+nav { 
+    background-color: hsl(60, 100%, 90%);
+    position: sticky;
+    top:38px;
+    z-index: 9990;
+}
+aside { background-color: rgb(170, 254, 170) }
+footer { 
+    background-color:rgb(255, 186, 186);
+    height: 1000px;
+}
+
+#pretext {
+    color: red;
+}
+
+u {
+    position: relative;
+    top: -10px;
+    left: -50px;
+}
+
+.top b{
+    background-color: lightblue;
+}
+
+#pretext ~ section {
+    background-color: lightcyan;
+}
+
+section.top.first {
+    font-size: 20px;
+    position: sticky;
+    top: 80px;
+}
+
+section.first {
+    border: dashed 5px gray;
+    min-height: 250px;
+    background-image: url(/img/icon2.png), url(/img/background.png) ;
+    background-repeat: no-repeat, repeat;
+    background-position: right 150px, 5px;
+    background-size: 100px, 40px 40px;
+}
+
+[colspan] {
+    font-size: 40px;
+}
+
+[colspan="2"] {
+    background-color: aqua;
+}
+
+img.icon {
+    max-height: 24px;
+    vertical-align: middle;
+}
+
+img.pic {
+    max-width: 100px;
+    float: right;
+    margin-left: 10px;
+}
+
+section {
+    text-align: justify;
+    padding: 10px;
+}

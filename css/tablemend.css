@@ -1,0 +1,42 @@
+/* стили основного оформления ячеек таблицы */
+.t-red {
+    background-color: rgb(255, 180, 180);
+    text-align: center;
+}
+.t-yellow {
+    background-color: rgb(255, 255, 180);
+    text-align: center;
+}
+.t-blue {
+    background-color: rgb(180, 214, 255);
+    text-align: center;
+}
+
+.hide {
+    /*display: none;*/
+    visibility: hidden;
+}
+
+#mendeleev {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#mendeleev th, #mendeleev td {
+    padding: 20px;
+    border: solid 1px black;
+    width: 30px;
+    height: 30px;
+    text-wrap: nowrap;
+}
+
+#mendeleev th {
+    padding: 0 20px;
+}
+
+#mendeleev td.hide {
+    border: none;
+    padding: 10px;
+    width: 0;
+    height: 0;
+}
