@@ -88,3 +88,36 @@ section {
     text-align: justify;
     padding: 10px;
 }
+
+@counter-style winners-list {
+    system: fixed;
+    symbols: Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ;
+    suffix: " ";
+}
+
+nav ul {
+    /*list-style: "😀";*/
+    /*list-style-type: winners-list;*/
+    /*list-style-position: inside;*/
+    /*list-style-image: url(/img/icon1.png);*/
+    /*list-style-image: linear-gradient( red, red);*/
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+#figure {
+    position:absolute; 
+    top:400px; 
+    background-color: white;
+    transform: translateX(50px) rotate(45deg) scale(.5);
+}
+
+nav a {
+    border: solid 1px black;
+    padding: 5px;
+    border-radius: 5px;
+}
