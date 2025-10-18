@@ -1,0 +1,100 @@
+:root {
+    --color-base: white;
+    --color-text: #444;
+    --color-panel: lightcyan;
+    --color-border: black;
+    --color-contrast: blue;
+    --shadow-inset: 0 0 20px var(--color-border) inset;
+    --shadow: 0 0 20px var(--color-border);
+}
+
+*:not(.fa) {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--color-text);
+    box-sizing: border-box;
+}
+
+html, body {
+    margin:0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav { 
+    /*background-color: hsl(60, 100%, 90%);*/
+    position: sticky;
+    top:38px;
+    z-index: 9990;
+
+    & > ul > li > ul {
+        left:0;
+    }
+
+    & a {
+        border: solid 1px black;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    & ul {
+        /*list-style: "😀";*/
+        /*list-style-type: winners-list;*/
+        /*list-style-position: inside;*/
+        /*list-style-image: url(/img/icon1.png);*/
+        /*list-style-image: linear-gradient( red, red);*/
+        list-style: none;
+        padding: 0;
+
+        & ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+
+            & ul {
+                top: 0;
+                left: 100%;
+            }
+        }
+
+        & li {
+            display: inline-block;
+            position: relative;
+
+            &:hover > ul {
+                display: inline-block;
+            }
+
+            & a {
+                background: linear-gradient(#eee 1px, lightgray 5px, lightgray 50%, #eee 55%, #aaa 95%);
+                user-select: none;
+                display: inline-block;
+
+                &:hover {
+                    box-shadow: var(--shadow);
+                }
+
+                &:active {
+                    box-shadow: var(--shadow-inset);
+                }
+
+                &:focus {
+                    background: linear-gradient(#aaa 1px, #eee 5px, #eee 50%, lightgray 55%, #eee 95%);
+                }
+            }
+
+            & > a.act {
+                border-color: var(--color-contrast);
+                color: var(--color-contrast);
+            }
+
+            & ul li a {
+                width: 200px;
+            }
+        }
+    }
+}

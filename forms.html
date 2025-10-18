@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" title="Эта кнопка позволяет нам 
+                вернуться на главную страницу"><i class="fa fa-home" aria-hidden="true"></i> Главная</a></li>
+            <li><a href="mendeleev.html"><i class="fa fa-table" aria-hidden="true"></i> Таблица менделеева</a></li>
+            <li><a href="cssimg.html"><i class="fa fa-picture-o" aria-hidden="true"></i> CSS-фигуры</a></li>
+            <li><a>Что-то еще</a></li>
+            <li><a>Что-то еще</a><ul>
+                <li><a>первое</a></li>
+                <li><a>второе</a><ul>
+                    <li><a>подменю</a><ul>
+                        <li><a>глубокое меню</a></li>
+                        <li><a>глубокое меню 2</a></li>
+                    </ul></li>
+                    <li><a>еще одно</a></li>
+                    <li><a>и еще одно</a></li>
+                </ul></li>
+                <li><a>третье</a></li>
+            </ul></li>
+            <li><a class="act" href="forms.html">Формы</a></li>
+        </ul>
+    </nav><br><br><br><br><br><br>
+
+    <form action="?">
+        <input type="hidden" name="personid" value="423452">
+        <table>
+            <tr>
+                <td>Введите ФИО:</td>
+                <td><input type="text" value="???" placeholder="Введите ФИО"></td>
+            </tr>
+            <tr>
+                <td>Ваш пол:</td>
+                <td>
+                    <label><input type="radio" name="gender">М</label>
+                    <label><input type="radio" checked name="gender">Ж</label>
+                    <label><input type="radio" disabled name="gender">??</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Вам уже испольнилось 18?</td>
+                <td>
+                    <label><input type="checkbox"> Да</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Укажите ваше день рождение:</td>
+                <td><input type="date"></td>
+            </tr>
+            <tr>
+                <td>Сколько вам полных лет:</td>
+                <td><input type="number" min="6" max="120" value="18" step="2"></td>
+            </tr>
+            <tr>
+                <td>Ваша почта:</td>
+                <td><input type="email" required placeholder="example@mail.ru"></td>
+            </tr>
+            <tr>
+                <td>На сколько вам нравиться текущий опрос:</td>
+                <td><input type="range" min="1" max="10" step="2"></td>
+            </tr>
+            <tr>
+                <td>Введите ваш пароль от почты:</td>
+                <td><input type="password"></td>
+            </tr>
+            <tr>
+                <td>Какую вы предпочитаете ОС:</td>
+                <td><select>
+                    <option disabled>PC</option>
+                    <optgroup>
+                        <option>Windows</option>
+                        <option>Linux</option>
+                        <option>Max OS</option>
+                    </optgroup>
+                    <option disabled>Mobile</option>
+                    <optgroup>
+                        <option selected>Android</option>
+                        <option>iOS</option>
+                    </optgroup>
+                    <option>MS-DOS</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Какую вы предпочитаете ОС:</td>
+                <td><select multiple>
+                    <option disabled>PC</option>
+                    <optgroup>
+                        <option>Windows</option>
+                        <option>Linux</option>
+                        <option>Max OS</option>
+                    </optgroup>
+                    <option disabled>Mobile</option>
+                    <optgroup>
+                        <option selected>Android</option>
+                        <option>iOS</option>
+                    </optgroup>
+                    <option>MS-DOS</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Ваше хобби:</td>
+                <td><textarea rows="10">askdj</textarea></td>
+            </tr>
+            <tr>
+                <td>Прогресс</td>
+                <td><progress value="10" min="0" max="100">10 / 100</progress></td>
+            </tr>
+            <tr>
+                <td>Управление данными:</td>
+                <td>
+                    <input type="button" value="<!!!>">
+                    <button type="button">
+                        <b>Test</b> <i>Test</i>
+                    </button>
+                    <input type="reset" value="Сбросить">
+                    <input type="submit" value="Отправить">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+</html>

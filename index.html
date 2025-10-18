@@ -5,21 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <style>
 
     </style>
     
 </head>
 <body class="xtheme-black">
+    <a name="top"></a>
     <header>Это шапка сайта</header>
     <nav>
         &lt;&gt;
         &#128064;
         <ul>
-            <li><a href="/">Главная</a></li>
-            <li><a href="mendeleev.html">Таблица менделеева</a></li>
-            <li><a href="cssimg.html">CSS-фигуры</a></li>
+            <li><a class="act" href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Главная</a></li>
+            <li><a href="mendeleev.html"><i class="fa fa-table" aria-hidden="true"></i> Таблица менделеева</a></li>
+            <li><a href="cssimg.html"><i class="fa fa-picture-o" aria-hidden="true"></i> CSS-фигуры</a></li>
             <li><a>Что-то еще</a></li>
+            <li><a>Что-то еще</a><ul>
+                <li><a>первое</a></li>
+                <li><a>второе</a><ul>
+                    <li><a>подменю</a><ul>
+                        <li><a>глубокое меню</a></li>
+                        <li><a>глубокое меню 2</a></li>
+                    </ul></li>
+                    <li><a>еще одно</a></li>
+                    <li><a>и еще одно</a></li>
+                </ul></li>
+                <li><a>третье</a></li>
+            </ul></li>
+            <li><a href="forms.html">Формы</a></li>
         </ul>
     </nav>
     <aside>Это боковая панель</aside>
@@ -96,5 +112,7 @@
     </main>
 
     <footer>это подвал сайта</footer>
+
+    <div class="click-top"><a href="#top">&uparrow;</a></div>
 </body>
 </html>

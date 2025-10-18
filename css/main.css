@@ -1,12 +1,3 @@
-:root {
-    --color-base: white;
-    --color-text: #444;
-    --color-panel: lightcyan;
-    --color-border: black;
-    --color-contrast: blue;
-    --shadow-inset: 0 0 20px var(--color-border) inset;
-    --shadow: 0 0 20px var(--color-border);
-}
 
 .theme-black{
     --color-base: black;
@@ -15,16 +6,9 @@
 }
 
 
-* {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+*:not([type="button"]):not(button):not(.fa) {
     background-color: var(--color-base);
     border-color: var(--color-border);
-    color: var(--color-text);
-}
-
-html, body {
-    margin:0;
-    padding: 0;
 }
 
 header, nav, aside, footer {
@@ -40,12 +24,6 @@ header {
     position: sticky;
     top: 0px;
     z-index: 9999;
-}
-nav { 
-    /*background-color: hsl(60, 100%, 90%);*/
-    position: sticky;
-    top:38px;
-    z-index: 9990;
 }
 
 footer { 
@@ -117,19 +95,6 @@ section {
     suffix: " ";
 }
 
-nav ul {
-    /*list-style: "😀";*/
-    /*list-style-type: winners-list;*/
-    /*list-style-position: inside;*/
-    /*list-style-image: url(/img/icon1.png);*/
-    /*list-style-image: linear-gradient( red, red);*/
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-}
 
 #figure {
     position:absolute; 
@@ -138,30 +103,26 @@ nav ul li {
     transform: translateX(50px) rotate(45deg) scale(.5);
 }
 
-a {
-    text-decoration: none;
-    cursor: pointer;
+.click-top {
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
 
-nav li a {
-    background: linear-gradient(#eee 1px, lightgray 5px, lightgray 50%, #eee 55%, #aaa 95%);
-    user-select: none;
-}
-
-nav li a:hover {
-    box-shadow: var(--shadow);
-}
-
-nav li a:active {
-    box-shadow: var(--shadow-inset);
-}
-
-nav li a:focus {
-    background: linear-gradient(#aaa 1px, #eee 5px, #eee 50%, lightgray 55%, #eee 95%);
-}
-
-nav a {
-    border: solid 1px black;
+.click-top a {
+    display: inline-block;
     padding: 5px;
-    border-radius: 5px;
+    border: solid var(--color-border) 1px;
+    border-radius: 10px;
+    background-color: var(--color-panel);
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.click-top a:hover {
+    box-shadow: var(--shadow);
 }
