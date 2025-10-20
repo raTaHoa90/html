@@ -24,11 +24,15 @@ header {
     position: sticky;
     top: 0px;
     z-index: 9999;
+
+    grid-area: header;
 }
 
 footer { 
-    /*background-color:rgb(255, 186, 186);*/
+    background-color:rgb(255, 186, 186) !important;
     height: 1000px;
+
+    grid-area: footer;
 }
 
 #pretext {
@@ -125,4 +129,46 @@ section {
 
 .click-top a:hover {
     box-shadow: var(--shadow);
+}
+
+/* GRID */
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 50px 100px auto 50px;
+    grid-template-areas: 
+        "header header"
+        "menu ."
+        "main aside"
+        "footer footer";
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: aside;
+}
+
+@media screen and (max-width: 320px) {
+    body {
+        grid-template-columns: auto;
+        grid-template-rows: 50px 100px auto auto 50px;
+        grid-template-areas: 
+            "header"
+            "menu"
+            "main"
+            "aside"
+            "footer";
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+    a>span {
+        display: none;
+    }
 }

@@ -85,6 +85,10 @@ nav {
                 &:focus {
                     background: linear-gradient(#aaa 1px, #eee 5px, #eee 50%, lightgray 55%, #eee 95%);
                 }
+
+                &>span { 
+                    background-color: transparent !important;
+                }
             }
 
             & > a.act {

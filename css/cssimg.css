@@ -19,7 +19,7 @@ div {
     background-color: blue;
 }
 
-#i2{
+#i2, .circle{
     background-color: green;
     border-radius: 30px;
 }
@@ -85,4 +85,58 @@ div {
     border-radius: 0 30px 30px 0;
     right: -15px;
     top: calc(50% - 15px);
+}
+
+.circle {
+    min-width: 30px;
+    min-height: 30px;
+
+    transition: all 2s;
+}
+
+.circle2 {
+    min-width: 30px;
+    min-height: 30px;
+
+    background-color: red;
+
+    animation-play-state: paused;
+    animation-duration: 4s;
+    animation-name: circle-dance;
+    animation-iteration-count: infinite;
+}
+
+
+input:checked + .circle {
+    transform: translateX(100px);
+}
+
+input:checked + .circle2 {
+    animation-play-state: running;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes circle-dance {
+    0% {
+        transform: none;
+    }
+
+    25% {
+        transform: translateX(200px);
+    }
+
+    50% {
+        transform: translateX(200px) translateY(200px);
+    }
+
+    75% {
+        transform: translateY(200px);
+    }
+
+    100% {
+        transform: none;
+    }
 }
