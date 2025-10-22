@@ -20,25 +20,38 @@
 #mendeleev {
     border-collapse: collapse;
     table-layout: fixed;
-}
 
-#mendeleev th, #mendeleev td {
-    padding: 20px;
-    border: solid 1px black;
-    width: 30px;
-    height: 30px;
-    text-wrap: nowrap;
-}
+    & th, & td {
+        padding: 20px;
+        border: solid 1px black;
+        width: 30px;
+        height: 30px;
+        text-wrap: nowrap;
+    }
 
-#mendeleev th {
-    padding: 0 20px;
-}
+    & td {
+        background-color: rgb(180, 214, 255);
+        text-align: center;
 
-#mendeleev td.hide, #mendeleev td:empty, #mendeleev th:empty {
-    border: none;
-    padding: 10px;
-    width: 0;
-    height: 0;
+        &:nth-last-child(3), &:nth-last-child(4), &:nth-last-child(5), &:nth-last-child(6){
+            background-color: rgb(255, 255, 180);
+        }
+
+        &:nth-child(2), &:nth-child(3), &:nth-last-child(1), &:nth-last-child(2) {
+            background-color: rgb(255, 180, 180);
+        }
+    }
+
+    & th {
+        padding: 0 20px;
+    }
+
+    & td.hide, & :is(td, th):empty{
+        border: none;
+        padding: 10px;
+        width: 0;
+        height: 0;
+    }
 }
 
 .flex-table {

@@ -1,4 +1,6 @@
 
+@import url(menu.css);
+
 .theme-black{
     --color-base: black;
     --color-text: white;
@@ -6,7 +8,7 @@
 }
 
 
-*:not([type="button"]):not(button):not(.fa) {
+*:not(:is([type="button"], button, .fa)) {
     background-color: var(--color-base);
     border-color: var(--color-border);
 }
@@ -53,19 +55,38 @@ u {
     background-color: lightcyan;
 }
 
-section.top.first {
-    font-size: 20px;
-    position: sticky;
-    top: 80px;
-}
+section{
+    text-align: justify;
+    padding: 10px;
+    --color-base: transparent; 
 
-section.first {
-    border: dashed 5px gray;
-    min-height: 250px;
-    background-image: url(/html/img/icon2.png), url(/html/img/background.png) ;
-    background-repeat: no-repeat, repeat;
-    background-position: right 150px, 5px;
-    background-size: 100px, 40px 40px;
+    &.top.first {
+        font-size: 20px;
+        position: sticky;
+        top: 80px;
+    }
+
+    &.first {
+        border: dashed 5px gray;
+        min-height: 250px;
+        background-image: url(/html/img/icon2.png), url(/html/img/background.png) ;
+        background-repeat: no-repeat, repeat;
+        background-position: right 150px, 5px;
+        background-size: 100px, 40px 40px;
+    }
+
+    &::first-letter {
+        color: red;
+        font-size: xx-large;
+    }
+
+    &:has(hr) {
+        border: double 3px red !important;
+    }
+
+    &:has(b i) {
+        color:mediumslateblue !important;
+    }
 }
 
 [colspan] {
@@ -87,11 +108,15 @@ img.pic {
     margin-left: 10px;
 }
 
-section {
-    text-align: justify;
-    padding: 10px;
-    --color-base: transparent; 
+img.pic2 {
+    max-width: 300px;
+    float: right;
+    margin-left: 10px;
+    margin-right: 200px;
+    /*clip-path: circle(150px);*/
+    shape-outside: circle(250px);
 }
+
 
 @counter-style winners-list {
     system: fixed;

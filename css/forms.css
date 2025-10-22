@@ -41,3 +41,15 @@ optgroup>option{
 [type="button"], button {
     margin: 5px;
 }
+
+/*:where() аналог :is() но с другим весом при подсчете приоритетов замены одинаковых свойств */
+
+:is(form, .form, [as-form]) :is(a, button, [type="button"], [type="submit"], [type="reset"]).btn
+/* ===>
+form a.btn, form button.btn, form [type="button"].btn, form [type="submit"].btn, form [type="reset"].btn,
+.form a.btn, form button.btn, .form [type="button"].btn, .form [type="submit"].btn, .form [type="reset"].btn,
+[as-form] a.btn, [as-form] button.btn, [as-form] [type="button"].btn, [as-form] [type="submit"].btn, [as-form] [type="reset"].btn 
+*/
+{
+    color: red;
+}
