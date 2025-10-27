@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS База</title>
     <script src="js/study1.js"></script>
+    <style>
+        input{ 
+            margin: 5px;
+            padding: 5px;
+            min-width: 30px;
+        }
+    </style>
 </head>
 <body>
-    <div id="d1" onclick="clickRun('akjs\'dlk')">1</div>
     <noscript>У вас не работает JS, без этого сайт будет не работоспособным!!!</noscript>
-    <script>
-        
-    </script>
-    <div id="d2">2</div>
+    Вывод результата <input id="result" readonly value="0"><span id="operation"></span><br>
+    Буффер значения <input id="buffer" readonly value="0"><br>
+    <input type="button" value="1" onclick="AppendNum(this)">
+    <input type="button" value="2" onclick="AppendNum(this)">
+    <input type="button" value="3" onclick="AppendNum(this)">
+    <input type="button" value="4" onclick="AppendNum(this)">
+    <input type="button" value="5" onclick="AppendNum(this)"><br>
+    <input type="button" value="+" onclick="SetOper(this)">
+    <input type="button" value="-" onclick="SetOper(this)">
+    <input type="button" value="*" onclick="SetOper(this)">
+    <input type="button" value="=" onclick="EnterMath()">
+    <input type="button" value="C" onclick="ClearBuffer()">
+    <input type="button" value="CE" onclick="ClearErase()">
 </body>
 </html>
