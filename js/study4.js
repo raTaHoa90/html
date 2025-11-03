@@ -41,6 +41,8 @@ var gameBall = {
             div.remove();
             this.score.innerText = +this.score.innerText + 1;
         };
+        
+        div.speed = Rand(1,50) / 10;
 
         this.balls.push(div);
         document.getElementById('game').append(div);
@@ -58,7 +60,7 @@ var gameBall = {
         this.balls.forEach(ball => {
             let top = parseInt(ball.style.top);
             if(top > 5)
-                ball.style.top = (top - 5) + 'px';
+                ball.style.top = (top - ball.speed) + 'px';
             else
                 this.GameOver();
         });
