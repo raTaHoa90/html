@@ -66,3 +66,15 @@ function Library(name, data = {}){
 }
 
 Library.count = 0;
+
+String.prototype.splitParams = function(){
+    let paramsStr = this.split('&'),
+        result = {};
+
+    for(let paramStr of paramsStr) {
+        let param = paramStr.split('=');
+        result[param[0]] = param[1];
+    }
+
+    return result;
+}

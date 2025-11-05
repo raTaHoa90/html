@@ -4,9 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="js/studyOOP.js"></script>
+    <script xsrc="js/studyOOP.js"></script>
+    <script xsrc="js/JsOOPNew.js"></script>
 </head>
 <body>
-    
+    <script>
+        window.test = 1;
+        console.log('DO Test');
+        try {
+            
+            //test();
+            if(!window.test)
+                throw new Error('Глобальная переменная test не была иницииализирована, значит скрипт не загружен');
+        } catch(e) {
+            console.log('ERROR: ');
+            console.log(e);
+        } finally {
+            console.log('FINALLY');
+        }
+        console.log('RUN');
+
+        let func = [].join,
+            ar2 = [1,2,3,4];
+        console.log(func.call(ar2, ','));
+        console.log(func.apply(ar2, [',']));
+
+        console.log(Math.max(...ar2));
+
+        let obj = {
+            key1: 123,
+            key2: 321
+        }, obj2 = {
+            ...obj,
+            key3: 444
+        }, obj3 = {
+            key3: 444
+        }
+
+        Object.assign(obj3, obj);
+
+        console.log(obj);
+        console.log(obj2);
+        console.log(obj3);
+
+    </script>
 </body>
 </html>

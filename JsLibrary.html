@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="js/studyLibraryBooks.js"></script>
+    <script src="js/studyLibraryBooks2.js"></script>
     <style>
         dialog{
             & tr>td:nth-child(1){
@@ -16,7 +16,17 @@
         }
     </style>
     <script>
-        var library = new Library('Библиотека книг');
+        var library = new Library('Библиотека книг', 'library', 'viewTable');
+        library.onStartEdit = function(data, bookName){
+            document.getElementById('nameBook').value = bookName;
+            document.getElementById('bookDesc').value = data.desc;
+            document.getElementById('numBookcase').value = data.numBookcase;
+            document.getElementById('numShelf').value = data.numShelf;
+            document.getElementById('updateBook').value = bookName;
+
+            document.getElementById('editBookInfo').showModal();
+        }
+
         function loadPage(){
             library.load('library');
             ViewLibrary();
@@ -32,6 +42,7 @@
             document.getElementById('bookDesc').value = '';
             document.getElementById('numBookcase').value = '';
             document.getElementById('numShelf').value = '';
+            document.getElementById('updateBook').value = '';
 
         }
         function closeBookDialog(){
@@ -39,12 +50,22 @@
         }
 
         function applySaveBookInfo(){
-            library.add(
-                document.getElementById('nameBook').value,
-                document.getElementById('bookDesc').value,
-                document.getElementById('numBookcase').value,
-                parseInt(document.getElementById('numShelf').value)
-            );
+            let oldNameBook = document.getElementById('updateBook').value;
+            if(oldNameBook === '')
+                library.add(
+                    document.getElementById('nameBook').value,
+                    document.getElementById('bookDesc').value,
+                    document.getElementById('numBookcase').value,
+                    parseInt(document.getElementById('numShelf').value)
+                );
+            else
+                library.replace(
+                    oldNameBook,
+                    document.getElementById('nameBook').value,
+                    document.getElementById('bookDesc').value,
+                    document.getElementById('numBookcase').value,
+                    parseInt(document.getElementById('numShelf').value)
+                );
             document.getElementById('editBookInfo').close();
             library.save('library');
             ViewLibrary();
@@ -55,6 +76,7 @@
     <div id="viewTable"></div>
     <input type="button" value="Добавить новую книгу" onclick="openNewBook()">
     <dialog id="editBookInfo">
+        <input type="hidden" id="updateBook" value="">
         <table>
             <tr>
                 <td>Название книги</td>
