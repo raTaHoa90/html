@@ -7,8 +7,21 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/forms.css">
     <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="js/l2/findElements.js"></script>
+    <style>
+        #errors div {
+            border: solid 1px darkred;
+            background-color: red;
+            color: yellow;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body>
+<body onload="loadpage()">
     <nav>
         <ul>
             <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i><span> Главная</span></a></li>
@@ -32,17 +45,22 @@
         </ul>
     </nav><br><br><br><br><br><br>
 
-    <form action="?">
-        <fieldset style="text-align:left; margin: 10px;"><legend>Test</legend>
-            text
+    <div id="errors">
 
+    </div>
+
+    <form action="?" id="mainForm">
+        <fieldset style="text-align:left; margin: 10px;" name="persons"><legend>Test</legend>
+            text
+            <input type="hidden" name="personid" value="423452">
+            <input name="personName" value="NoName">
         </fieldset>
 
-        <input type="hidden" name="personid" value="423452">
+        
         <table>
             <tr>
                 <td>Введите ФИО:</td>
-                <td><input type="text" value="???" placeholder="Введите ФИО"></td>
+                <td><input type="text" value="???" placeholder="Введите ФИО" name="fio"></td>
             </tr>
             <tr>
                 <td>Ваш пол:</td>
@@ -55,37 +73,37 @@
             <tr>
                 <td>Вам уже испольнилось 18?</td>
                 <td>
-                    <label><input type="checkbox"> Да</label>
+                    <label><input type="checkbox" name="isAgeGt18"> Да</label>
                 </td>
             </tr>
             <tr>
                 <td>Укажите ваше день рождение:</td>
-                <td><input type="date"></td>
+                <td><input type="date" name="birthday"></td>
             </tr>
             <tr>
                 <td>Сколько вам полных лет:</td>
-                <td><input type="number" min="6" max="120" value="18" step="2"></td>
+                <td><input type="number" min="6" max="120" value="18" step="2" name="age"></td>
             </tr>
             <tr>
                 <td>Ваша почта:</td>
-                <td><input type="email" required placeholder="example@mail.ru"></td>
+                <td><input type="email" name="email" required placeholder="example@mail.ru"></td>
             </tr>
             <tr>
                 <td>На сколько вам нравиться текущий опрос:</td>
-                <td><input type="range" min="1" max="10" step="2"></td>
+                <td><input type="range" min="1" max="10" step="2" name="stars"></td>
             </tr>
             <tr>
                 <td>Введите ваш пароль от почты:</td>
-                <td><input type="password"></td>
+                <td><input type="password" name="pass"></td>
             </tr>
             <tr>
                 <td>Какую вы предпочитаете ОС:</td>
-                <td><select>
+                <td><select name="favoriteOS">
                     <option disabled>PC</option>
                     <optgroup>
                         <option>Windows</option>
                         <option>Linux</option>
-                        <option>Max OS</option>
+                        <option>Mac OS</option>
                     </optgroup>
                     <option disabled>Mobile</option>
                     <optgroup>
@@ -97,12 +115,12 @@
             </tr>
             <tr>
                 <td>Какую вы предпочитаете ОС:</td>
-                <td><select multiple>
+                <td><select multiple name="favoriteOSMulti">
                     <option disabled>PC</option>
                     <optgroup>
                         <option>Windows</option>
                         <option>Linux</option>
-                        <option>Max OS</option>
+                        <option>Mac OS</option>
                     </optgroup>
                     <option disabled>Mobile</option>
                     <optgroup>
@@ -114,11 +132,11 @@
             </tr>
             <tr>
                 <td>Ваше хобби:</td>
-                <td><textarea rows="10">askdj</textarea></td>
+                <td><textarea rows="10" name="hobby">askdj</textarea></td>
             </tr>
             <tr>
                 <td>Прогресс</td>
-                <td><progress value="10" min="0" max="100">10 / 100</progress></td>
+                <td><progress value="10" min="0" max="100" name="progress">10 / 100</progress></td>
             </tr>
             <tr>
                 <td>Управление данными:</td>
