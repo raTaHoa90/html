@@ -96,14 +96,14 @@ function loadpage(){
     input.defaultValue - значение которое было указано в value при парсинге страницы
     input.willValidate - проверяется ли валидация браузером
 
-    input.onfocus
-    input.onblur
-    input.onchange - при изменении поля
-    input.oninput  - во время изменения поля
-    input.onselect - при выделения текста внутри поля
-    input.onkeydown
-    input.onkeypress
-    input.onkeyup
+    input.onfocus    - при получении фокуса ввода
+    input.onblur     - при потере фокуса ввода
+    input.onchange   - при изменении поля
+    input.oninput    - во время изменения поля
+    input.onselect   - при выделения текста внутри поля
+    input.onkeydown  - когда пользователь нажимает кнопку на клавиатуре
+    input.onkeypress - когда пользователь нажал и отпустил кнопку на клавиатуре
+    input.onkeyup    - когда пользователь отпустил кнопку на клавиатуре
 */
 
 /* SELECT
